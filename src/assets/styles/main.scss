@@ -51,6 +51,10 @@ a {
 	transition: color 0.2s ease;
 }
 
+.page-wrapper {
+	padding-top: 76px;
+}
+
 // Global classes
 .background-img {
 	background-size: cover;
@@ -71,12 +75,19 @@ a {
 		background: transparent;
 		min-height: 4.5rem;
 
+		&.with-background {
+			background: $dark-blue-color;
+		}
+
 		&-menu {
 			.navbar-item {
 				color: $white;
 				font-weight: $weight-semibold;
 				text-transform: uppercase;
 
+				&:focus {
+					background-color: transparent;
+				}
 				&:hover {
 					background-color: transparent;
 					color: $primary;

@@ -1,6 +1,6 @@
 <template>
 	<header class="header">
-		<nav class="navbar">
+		<nav :class="$route.path == '/' ? '' : 'with-background'" class="navbar">
 			<div class="container">
 				<div class="navbar-brand">
 					<a
@@ -23,14 +23,14 @@
 				<div id="navbar-menu" class="navbar-menu">
 					<div class="navbar-end">
 						<!-- Loop through the navigation items -->
-						<a
+						<router-link
 							class="navbar-item has-text-white"
 							v-for="(item, index) in menuItems"
 							:key="index"
-							:href="item.link"
+							:to="item.link"
 						>
 							{{ item.text }}
-						</a>
+						</router-link>
 						<!-- End of loop -->
 					</div>
 				</div>

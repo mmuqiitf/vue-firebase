@@ -15,6 +15,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 library.add(faStar);
 
 const app = createApp(App);
+store.dispatch("user/onAuthChange");
 app.use(store);
 app.use(router);
 app.use(Toast);

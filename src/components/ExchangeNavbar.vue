@@ -22,6 +22,9 @@
 				</div>
 				<div id="navbar-menu" class="navbar-menu">
 					<div class="navbar-end">
+						<div v-if="isAuthenticated" class="navbar-item">
+							{{ user?.email }}
+						</div>
 						<!-- Loop through the navigation items -->
 						<router-link
 							class="navbar-item has-text-white"
@@ -40,6 +43,8 @@
 </template>
 
 <script>
+import useAuth from "@/composition/useAuth";
+
 export default {
 	name: "ExchangeNavbar",
 	methods: {
@@ -78,6 +83,9 @@ export default {
 				},
 			],
 		},
+	},
+	setup() {
+		return useAuth();
 	},
 };
 </script>

@@ -85,6 +85,11 @@ export default {
 	setup() {
 		return useAuth();
 	},
+	computed: {
+		isAuthenticated() {
+			return this.$store.getters["auth/isAuthenticated"];
+		},
+	},
 	watch: {
 		isProcessing(processing, prevProcessing) {
 			if (!processing && prevProcessing && !this.error) {

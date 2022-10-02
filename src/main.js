@@ -2,6 +2,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
 /* import the fontawesome core */
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -15,5 +17,7 @@ library.add(faStar);
 const app = createApp(App);
 app.use(store);
 app.use(router);
+app.use(Toast);
+
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.mount("#app");
